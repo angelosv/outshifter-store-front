@@ -2,7 +2,7 @@ import {
     PRODUCTS_MEDIATOR_FETCH,
     PRODUCTS_MEDIATOR_FETCH_SUCCESS,
     PRODUCTS_MEDIATOR_FETCH_ERROR,
-  } from '../../../constants/ActionTypes';
+  } from '../../constants/ActionTypes';
   
   export const productsMediatorFetch = () => ({
     type: PRODUCTS_MEDIATOR_FETCH,

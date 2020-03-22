@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import products from './products';
-
+import settings from './settings';
 // importar reducers de multilangual
 
 //aqui importo reducers de cada funcionalidad
@@ -8,7 +8,8 @@ import products from './products';
 // aquí combino los reducers para el componentdidmount
 
 const reducers = combineReducers({
-    data: products
+    data: products,
+    defaultvalues: settings
 })
 
 export default reducers

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import StackGrid,  { transitions }  from "react-stack-grid";
 import {Link} from 'react-router-dom';
+import {getVisibleProducts} from '../../../services/index'
+import ProductListItem from '../../product-list'
 
 const { scaleDown } = transitions;
 
@@ -367,7 +369,14 @@ class Main extends Component {
           }]
         }
         ]
-        
+        const { isLoading, dafaultvalues } = this.props
+        const {productImage} = dafaultvalues
+        if (isLoading === true ) {
+            return <p>Loading</p>;
+        }else{
+    
+        }
+    
   
 
         return(
@@ -384,10 +393,10 @@ class Main extends Component {
                               columnWidth={'16.66%'}
                               gutterWidth={20}
                               gutterHeight={20}>
-                              { items.map((product, index) =>
-                                                                  <div className="isotopeSelector" >
-                                                                 <p>df</p>
-                                                                  </div>
+                              { this.props.products.map((product, index) =>
+                                                                        <div className="isotopeSelector" >
+                                                                        <ProductListItem product={product} dafaultvalues={productImage}></ProductListItem>
+                                                                        </div>
 
                               )}
                           </StackGrid>
@@ -410,10 +419,12 @@ class Main extends Component {
 
 
 const mapStateToProps = (state) => ({
-
-})
-const mapDispatchToProps = {
-    
-}
+  products: getVisibleProducts(state.data, state.data),
+  isLoading: state.data.isLoading,
+  dafaultvalues: state.defaultvalues
+ })
+ const mapDispatchToProps = {
+     
+ }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main)

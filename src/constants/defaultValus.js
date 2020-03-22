@@ -1,0 +1,1 @@
+export const productImage = '/assets/images/fashion/product/1.jpg'

@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
-
 class ProductListItem extends Component {
     constructor(props){
         super(props)
@@ -9,18 +8,27 @@ class ProductListItem extends Component {
         }
     }
     render(){
-        const {product, symbol, onAddToCartClicked, onAddToWishlistClicked, onAddToCompareClicked} = this.props;
-
+        const {product, symbol, onAddToCartClicked, onAddToWishlistClicked, onAddToCompareClicked, dafaultvalues} = this.props;
         return(
             <div className="product-box">
                 <div className="img-Wrapper">
                 <div className="front">
-                                <Link to={`${process.env.PUBLIC_URL}/product/${product.id}`} ><img
-                                    src={product.variants?
-                                        this.state.image?this.state.image:product.images[0].url
-                                        :product.pictures[0]}
-                                    className="img-fluid"
-                                    alt="" /></Link>
+                    {Object.keys(product.images).length?
+                    // Check image is not undefined //
+                    <Link to={`${process.env.PUBLIC_URL}/product/${product.id}`} ><img
+                    src={
+
+                        product.images[0].url
+                        
+                        }
+                    className="img-fluid"
+                    alt="" /></Link>
+                    
+                    :<Link to={`${process.env.PUBLIC_URL}/product/${product.id}`} ><img
+                    src={this.props.dafaultvalues}
+                    className="img-fluid"
+                    alt="" />
+                    </Link>}
                             </div>
                 </div>
                 <div className="cart-info cart-wrap">
