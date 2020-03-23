@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 
-
+import Checkout from './components/pages/checkout'
 import Layout from './components/layout/'
 import Main from './components/pages/main'
 import ProductPage from './components/product'
@@ -34,6 +34,8 @@ class App extends Component{
                         <Layout>
                             <Route exact path={'/'} component={Main} />
                             <Route path={`${process.env.PUBLIC_URL}/product/:id`} component={ProductPage}/>
+                            <Route path={'/checkout'} component={Checkout}/>
+
                         </Layout>
                     </Switch>
                 </BrowserRouter>

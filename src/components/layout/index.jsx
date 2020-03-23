@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Helmet} from 'react-helmet'
 
 
 // aquí importo header y footer de layout global del marketplace
@@ -11,6 +12,9 @@ class Layout extends Component {
         console.log(containerClassnames)
         return (
             <div id="app-container" className={containerClassnames}>
+                <Helmet>
+                    <title>Outshifter | Store front</title>
+                </Helmet>
                 <Header/>
                     <main>
                         <div className="container-fluid">

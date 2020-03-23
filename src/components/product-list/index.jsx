@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
+import { ProductBoxes } from '../theme/product-boxes';
 class ProductListItem extends Component {
     constructor(props){
         super(props)
@@ -10,7 +11,7 @@ class ProductListItem extends Component {
     render(){
         const {product, symbol, onAddToCartClicked, onAddToWishlistClicked, onAddToCompareClicked, dafaultvalues} = this.props;
         return(
-            <div className="product-box">
+            <ProductBoxes>
                 <div className="img-Wrapper">
                 <div className="front">
                     {Object.keys(product.images).length?
@@ -58,7 +59,7 @@ class ProductListItem extends Component {
 
                             </div>
                         </div>
-            </div>
+            </ProductBoxes>
             
         )
     }

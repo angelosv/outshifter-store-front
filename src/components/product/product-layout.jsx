@@ -3,10 +3,11 @@ import Slider from "react-slick";
 import { connect } from "react-redux";
 import { productExist } from "../../services";
 import { Router, Route, Redirect, Link } from "react-router-dom";
+import {addToCart} from '../../actions/index'
+
 
 // import custom Components
-import DetailsProduct from "../product/DetailProduct";
-import ProductTabs from "../common/ProductTabs";
+import DetailProduct from "../product/DetailProduct";
 
 import ImageZoom from "../common/ImageZoom";
 import SmallImages from "../common/SmallImages";
@@ -28,11 +29,11 @@ class productLayout extends Component {
   }
 
   render() {
-    const {symbol, item, addToCart, addToCartUnsafe, addToWishlist} = this.props
+    const {symbol, item, addToCartcartClick, addToCartUnsafe, addToWishlist} = this.props
     var products = {
         fade: true
     };
-
+console.log(this.props, 'el estado')
     var productsnav = {
         slidesToShow: 3,
         slidesToScroll:1,
@@ -59,11 +60,11 @@ class productLayout extends Component {
                                     <SmallImages item={item} settings={productsnav} navOne={this.state.nav1} />
 
                 </div>
-                <DetailsProduct
+                <DetailProduct
                   symbol={"symbol"}
                   item={item}
                   navOne={"this.state.nav1"}
-                  addToCartClicked={"addToCart"}
+                  addToCart={addToCartcartClick}
                 />
               </div>
             </div>
@@ -75,7 +76,6 @@ class productLayout extends Component {
           <div className="container">
             <div className="row">
               <div className="col-sm-12 col-lg-12">
-                <DetailsProduct />
               </div>
             </div>
           </div>
@@ -85,9 +85,14 @@ class productLayout extends Component {
     );
   }
 }
-
+const mapDispatchtoProps = (dispatch) =>{
+  return {
+    addToCartcartClick: (item, quantity) => dispatch(addToCart(item, quantity))
+  }
+}
 const mapStateToProps = (state, ownProps) => {
   return {};
 };
 
-export default connect(mapStateToProps)(productLayout);
+
+export default connect(mapStateToProps, mapDispatchtoProps)(productLayout);
