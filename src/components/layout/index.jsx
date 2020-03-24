@@ -11,18 +11,11 @@ class Layout extends Component {
         const { containerClassnames } = this.props
         console.log(containerClassnames)
         return (
-            <div id="app-container" className={containerClassnames}>
-                <Helmet>
-                    <title>Outshifter | Store front</title>
-                </Helmet>
+                <div>
                 <Header/>
-                    <main>
-                        <div className="container-fluid">
-                            {this.props.children}
-                        </div>
+                        {this.props.children}
                     <Footer/>
-                </main>
-            </div>
+                </div>
         )
     }
 }
