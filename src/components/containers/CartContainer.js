@@ -2,17 +2,20 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
-import CartPage from '../components/common/headers/common/cart-header'
-import {removeFromCart} from '../actions'
-import {getCartTotal} from '../services'
+import CartPage from '../common/CartHeader/cart-header'
+import {removeFromCart} from '../../actions/'
+import {getCartTotal} from '../../services'
 
-const CartContainer = ({cartList, total, symbol, removeFromCart}) => (
+const Carting =({item})=>{
+return console.log('va o no?')
+}
+const CartContainer = ({cartList, total, symbol, removeFromCartItem}) => (
      <li  className="onhover-div mobile-cart"><div className="cart-qty-cls">{cartList.length}</div>
         <Link to={`${process.env.PUBLIC_URL}/cart`}><img src={`${process.env.PUBLIC_URL}/assets/images/icon/cart.png`} className="img-fluid" alt=""/>
             <i className="fa fa-shopping-cart"></i></Link>
-        <ul className="show-div shopping-cart">
+            <ul className="show-div shopping-cart">
             { cartList.map((item,index) => (
-                <CartPage key={index} item={item} total={total} symbol={symbol} removeFromCart={() => removeFromCart(item)}  />
+                <CartPage key={index} item={item} total={total} symbol={symbol} removeFromCart={removeFromCartItem}  />
             ))}
             {(cartList.length > 0) ?
                 <div>
@@ -38,9 +41,15 @@ const CartContainer = ({cartList, total, symbol, removeFromCart}) => (
 function mapStateToProps(state) {
     return {
         cartList: state.cartList.cart,
-        total: getCartTotal(state.cartList.cart),
-        symbol: state.data.symbol,
+        total: 10,
+        symbol: "$"
     }
 }
 
-export default connect(mapStateToProps, {removeFromCart})(CartContainer);
+const mapDispatchToProps = dispatch => {
+    return{
+        removeFromCartItem: item => dispatch(removeFromCart(item))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartContainer);

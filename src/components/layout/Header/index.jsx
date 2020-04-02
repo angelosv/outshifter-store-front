@@ -15,6 +15,7 @@ import {
 import { connect } from "react-redux";
 import LogoImage from "../../common/Logo";
 import {HeaderWrapper} from './style'
+import Cart from '../../containers/CartContainer'
 export class Header extends Component {
 
     constructor(props) {
@@ -24,9 +25,7 @@ export class Header extends Component {
 			isLoading:false
 		}
     }
-    /*=====================
-         Pre loader
-         ==========================*/
+
     componentDidMount() {
 
 
@@ -88,12 +87,6 @@ export class Header extends Component {
 							<div className="col-sm-12">
 								<div className="main-menu">
 									<div className="menu-left">
-										<div className="navbar">
-											<a href="javascript:void(0)" onClick={this.openNav}>
-												<div className="bar-style"> <i className="fa fa-bars sidebar-bar" aria-hidden="true"></i></div>
-											</a>
-											{/*SideBar Navigation Component*/}
-										</div>
 										<div className="brand-logo">
                                         <LogoImage/>
 										</div>
@@ -108,24 +101,7 @@ export class Header extends Component {
 														<div><img src={`${process.env.PUBLIC_URL}/assets/images/icon/search.png`} onClick={this.openSearch} className="img-fluid" alt="" />
 															<i className="fa fa-search" onClick={this.openSearch}></i></div>
 													</li>
-													<li className="onhover-div mobile-setting">
-														<div><img src={`${process.env.PUBLIC_URL}/assets/images/icon/setting.png`} className="img-fluid" alt="" />
-															<i className="fa fa-cog"></i></div>
-														<div className="show-div setting">
-															<h6>language</h6>
-															<ul>
-																<li><a href={null} onClick={() => this.changeLanguage('en')}>English</a> </li>
-																<li><a href={null} onClick={() => this.changeLanguage('fn')}>French</a> </li>
-															</ul>
-															<h6>currency</h6>
-															<ul className="list-inline">
-																<li><a href={null} onClick={() => this.props.changeCurrency('€')}>euro</a> </li>
-																<li><a href={null} onClick={() => this.props.changeCurrency('₹')}>rupees</a> </li>
-																<li><a href={null} onClick={() => this.props.changeCurrency('£')}>pound</a> </li>
-																<li><a href={null} onClick={() => this.props.changeCurrency('$')}>doller</a> </li>
-															</ul>
-														</div>
-													</li>
+													<Cart/>
 													{/*Header Cart Component */}
 												</ul>
 											</div>

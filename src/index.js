@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 
-import Checkout from './components/pages/checkout'
+import Cart from './components/pages/cart'
 import Layout from './components/layout/'
 import Main from './components/pages/main'
 import ProductPage from './components/product'
@@ -15,6 +15,7 @@ import { getAllProducts } from './actions/index.js';
 
 import './index.scss';
 import * as serviceWorker from './serviceWorker';
+import checkout from './components/pages/checkout';
 
 class App extends Component{
 
@@ -33,8 +34,8 @@ class App extends Component{
                         <Layout>
                             <Route exact path={'/'} component={Main} />
                             <Route path={`${process.env.PUBLIC_URL}/product/:id`} component={ProductPage}/>
-                            <Route path={'/checkout'} component={Checkout}/>
-
+                            <Route path={`${process.env.PUBLIC_URL}/cart`} component={Cart}/>
+                            <Route path={`${process.env.PUBLIC_URL}/checkout`} component={checkout}/>
                         </Layout>
                     </Switch>
                 </BrowserRouter>

@@ -11,7 +11,7 @@ class ProductListItem extends Component {
     render(){
         const {product, symbol, onAddToCartClicked, onAddToWishlistClicked, onAddToCompareClicked, dafaultvalues} = this.props;
         return(
-            <ProductBoxes>
+            <div className="product-box">
                 <div className="img-Wrapper">
                 <div className="front">
                     {Object.keys(product.images).length?
@@ -59,7 +59,7 @@ class ProductListItem extends Component {
 
                             </div>
                         </div>
-            </ProductBoxes>
+            </div>
             
         )
     }

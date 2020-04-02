@@ -58,7 +58,6 @@ class Main extends Component {
                     <div className="collection-product-wrapper">
                       <div className="section-t-space portfolio-section portfolio-padding metro-section port-col">
                         {products.length > 0 ? (
-                          
                           <StackGrid
                             appear={scaleDown.appear}
                             appeared={scaleDown.appeared}
@@ -70,21 +69,38 @@ class Main extends Component {
                             gutterHeight={20}
                           >
                             {products.map((product, index) => (
-                              <div className="isotopeSelector">
+                              <div className="isotopeContainer row">
+                                                                                                <div className="isotopeSelector" key={index}>
+
                                 <ProductListItem
                                   product={product}
                                   dafaultvalues={productImage}
                                 ></ProductListItem>
+                                </div>
                               </div>
                             ))}
                           </StackGrid>
                         ) : (
-                          <div className="col-sm-12 text-center section-b-space mt-5 no-found" >
-                                                            <img src={`${process.env.PUBLIC_URL}/assets/images/empty-search.jpg`} class="img-fluid mb-4" />
-                                                            <h3>Sorry! Couldn't find the product you were looking For!!!    </h3>
-                                                            <p>Please check if you have misspelt something or try searching with other words.</p>
-                                                            <Link to={`${process.env.PUBLIC_URL}/`} class="btn btn-solid">continue shopping</Link>
-                                                        </div>
+                          <div className="col-sm-12 text-center section-b-space mt-5 no-found">
+                            <img
+                              src={`${process.env.PUBLIC_URL}/assets/images/empty-search.jpg`}
+                              class="img-fluid mb-4"
+                            />
+                            <h3>
+                              Sorry! Couldn't find the product you were looking
+                              For!!!{" "}
+                            </h3>
+                            <p>
+                              Please check if you have misspelt something or try
+                              searching with other words.
+                            </p>
+                            <Link
+                              to={`${process.env.PUBLIC_URL}/`}
+                              class="btn btn-solid"
+                            >
+                              continue shopping
+                            </Link>
+                          </div>
                         )}
                       </div>
                     </div>
