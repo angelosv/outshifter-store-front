@@ -93,6 +93,16 @@ class CartCompontent extends Component {
                 )}
               </div>
             </div>
+            <div className="row cart-buttons">
+              <div className="col-6">
+                <Link
+                  to={`${process.env.PUBLIC_URL}/checkout`}
+                  className="btn btn-solid"
+                >
+                  check out
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
       </div>

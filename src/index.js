@@ -16,7 +16,7 @@ import { getAllProducts } from './actions/index.js';
 import './index.scss';
 import * as serviceWorker from './serviceWorker';
 import checkout from './components/pages/checkout';
-
+import Succes from  './components/pages/checkout/succes'
 class App extends Component{
 
     
@@ -36,6 +36,8 @@ class App extends Component{
                             <Route path={`${process.env.PUBLIC_URL}/product/:id`} component={ProductPage}/>
                             <Route path={`${process.env.PUBLIC_URL}/cart`} component={Cart}/>
                             <Route path={`${process.env.PUBLIC_URL}/checkout`} component={checkout}/>
+                            <Route path={`${process.env.PUBLIC_URL}/succes`} component={Succes}/>
+
                         </Layout>
                     </Switch>
                 </BrowserRouter>

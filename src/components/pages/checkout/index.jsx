@@ -3,9 +3,7 @@ import { Helmet } from "react-helmet";
 import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import SimpleReactValidator from "simple-react-validator";
-
-
-import { getCartTotal } from "../../services";
+import { getCartTotal } from "../../../utils/";
 
 class checkOut extends Component {
   constructor(props) {
@@ -84,7 +82,6 @@ class checkOut extends Component {
   render() {
     const { cartItems, symbol, total } = this.props;
 
-
     const onCancel = data => {
       console.log("The payment was cancelled!", data);
     };
@@ -92,7 +89,6 @@ class checkOut extends Component {
     const onError = err => {
       console.log("Error!", err);
     };
-
 
     return (
       <div>
@@ -105,7 +101,6 @@ class checkOut extends Component {
           />
         </Helmet>
         {/*SEO Support End */}
-
 
         <section className="section-b-space">
           <div className="container padding-cls">
@@ -281,9 +276,9 @@ class checkOut extends Component {
                             {cartItems.map((item, index) => {
                               return (
                                 <li key={index}>
-                                  {item.name} × {item.qty}{" "}
+                                  {item.title} x {item.qty}{" "}
                                   <span>
-                                    {symbol} {item.sum}
+                                    {symbol} {item.publicPrice * item.qty}
                                   </span>
                                 </li>
                               );
@@ -373,7 +368,6 @@ class checkOut extends Component {
                               </ul>
                             </div>
                           </div>
-                          
                         </div>
                       </div>
                     </div>
@@ -431,14 +425,27 @@ class checkOut extends Component {
                 </form>
               </div>
             </div>
+            <div className="row cart-buttons">
+                            <div className="col-6">
+                                <Link to={`${process.env.PUBLIC_URL}/left-sidebar/collection`} className="btn btn-solid">continue shopping</Link>
+                            </div>
+                            <div className="col-6">
+                                <Link to={`${process.env.PUBLIC_URL}/checkout`} className="btn btn-solid">check out</Link>
+                            </div>
+                        </div>
           </div>
         </section>
       </div>
     );
   }
 }
-const mapStateToProps = state => ({
-
-});
+const mapStateToProps = state => {
+  var valuta;
+  return {
+    cartItems: state.cartList.cart,
+    total: getCartTotal(state.cartList.cart),
+    valuta: (valuta = { symbol: "$" })
+  };
+};
 
 export default connect(mapStateToProps)(checkOut);
