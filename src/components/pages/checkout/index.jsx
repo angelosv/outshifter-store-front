@@ -10,7 +10,7 @@ class checkOut extends Component {
     super(props);
 
     this.state = {
-      payment: "stripe",
+      payment: "mangopay",
       first_name: "",
       last_name: "",
       phone: "",
@@ -48,35 +48,7 @@ class checkOut extends Component {
   }
 
   StripeClick = () => {
-    if (this.validator.allValid()) {
-      alert("You submitted the form and stuff!");
-
-      var handler = window.StripeCheckout.configure({
-        key: "pk_test_glxk17KhP7poKIawsaSgKtsL",
-        locale: "auto",
-        token: (token: any) => {
-          console.log(token);
-          this.props.history.push({
-            pathname: "/order-success",
-            state: {
-              payment: token,
-              items: this.props.cartItems,
-              orderTotal: this.props.total,
-              symbol: this.props.symbol
-            }
-          });
-        }
-      });
-      handler.open({
-        name: "Multikart",
-        description: "Online Fashion Store",
-        amount: this.amount * 100
-      });
-    } else {
-      this.validator.showMessages();
-      // rerender to show messages for the first time
-      this.forceUpdate();
-    }
+console.log('haciendo click')
   };
 
   render() {
@@ -94,7 +66,7 @@ class checkOut extends Component {
       <div>
         {/*SEO Support*/}
         <Helmet>
-          <title>MultiKart | CheckOut Page</title>
+          <title>Outshifter | Checkout</title>
           <meta
             name="description"
             content="Multikart – Multipurpose eCommerce React Template is a multi-use React template. It is designed to go well with multi-purpose websites. Multikart Bootstrap 4 Template will help you run multiple businesses."
@@ -341,7 +313,7 @@ class checkOut extends Component {
                                       name="payment-group"
                                       id="payment-2"
                                       defaultChecked={true}
-                                      onClick={() => this.checkhandle("stripe")}
+                                      onClick={() => this.checkhandle("mangopay")}
                                     />
                                     <label htmlFor="payment-2">Stripe</label>
                                   </div>
@@ -352,7 +324,7 @@ class checkOut extends Component {
                                       type="radio"
                                       name="payment-group"
                                       id="payment-1"
-                                      onClick={() => this.checkhandle("paypal")}
+                                      onClick={() => this.checkhandle("mangopay")}
                                     />
                                     <label htmlFor="payment-1">
                                       PayPal
@@ -368,6 +340,23 @@ class checkOut extends Component {
                               </ul>
                             </div>
                           </div>
+                          {total !== 0 ? (
+                            <div className="text-right">
+                              {this.state.payment === "mangopay" ? (
+                                <button
+                                  type="button"
+                                  className="btn-solid btn"
+                                  onClick={() => this.StripeClick()}
+                                >
+                                  Place Order
+                                </button>
+                              ) : (
+                                <p></p>
+                              )}
+                            </div>
+                          ) : (
+                            ""
+                          )}
                         </div>
                       </div>
                     </div>
@@ -425,14 +414,7 @@ class checkOut extends Component {
                 </form>
               </div>
             </div>
-            <div className="row cart-buttons">
-                            <div className="col-6">
-                                <Link to={`${process.env.PUBLIC_URL}/left-sidebar/collection`} className="btn btn-solid">continue shopping</Link>
-                            </div>
-                            <div className="col-6">
-                                <Link to={`${process.env.PUBLIC_URL}/checkout`} className="btn btn-solid">check out</Link>
-                            </div>
-                        </div>
+
           </div>
         </section>
       </div>
