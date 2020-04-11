@@ -1,6 +1,10 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin')
-admin.initializeApp();
+
+admin.initializeApp(functions.config().firebase);
+
+let db = admin.firestore();
+let docRef = db.collection('users').doc('alovelace');
 
 
 
@@ -10,21 +14,11 @@ admin.initializeApp();
      response.send(message)
  })
 
- exports.newOrder = functions.https.onCall(data, context =>{
-
-    if(!context.auth){
-        console.log('create a user')
-    }
-return admin.firestore().collection('orders').add({
-    id: 1,
-    items: {
-
-    },
-    subtotal:'2342',
-    customer: {
-        id: 12323,
-        name: "angelo"
-    }
-
+ exports.miputamadre = functions.https.onRequest((request, response) => {
+    const message = {text: 'HOLA COMO ESTAS?'}
+    console.log('HELLLO FROM FIREBASE')
+    response.send(message)
+    db.collection('orders').add({
+        email: 'myemail'
+    })
 })
- })

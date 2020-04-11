@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import SimpleReactValidator from "simple-react-validator";
 import { getCartTotal } from "../../../utils/";
+import {placeAnOrder} from '../../../actions/index'
+
 
 class checkOut extends Component {
   constructor(props) {
@@ -47,8 +49,10 @@ class checkOut extends Component {
     });
   }
 
-  StripeClick = () => {
-console.log('haciendo click')
+  PlaceOrder = () => {
+    let order = this.props.cartItems;
+    console.log(this.props,'estoy en placeorder')
+this.props.placeAnOrder(order)
   };
 
   render() {
@@ -346,7 +350,7 @@ console.log('haciendo click')
                                 <button
                                   type="button"
                                   className="btn-solid btn"
-                                  onClick={() => this.StripeClick()}
+                                  onClick={() => this.PlaceOrder()}
                                 >
                                   Place Order
                                 </button>
@@ -430,4 +434,10 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(checkOut);
+const dispatchToProps = dispatch => {
+  return {
+    placeAnOrder: order => dispatch(placeAnOrder(order))
+  }
+}
+
+export default connect(mapStateToProps, dispatchToProps)(checkOut);
