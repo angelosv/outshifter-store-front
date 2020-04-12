@@ -2,6 +2,8 @@ import { combineReducers } from "redux";
 import products from './products';
 import settings from './settings';
 import cartReducer from "./cart";
+import authUser from './auth';
+import order from './order'
 // importar reducers de multilangual
 
 //aqui importo reducers de cada funcionalidad
@@ -11,7 +13,9 @@ import cartReducer from "./cart";
 const reducers = combineReducers({
     data: products,
     defaultvalues: settings,
-    cartList: cartReducer
+    cartList: cartReducer,
+    authUser: authUser,
+    order: order
 })
 
 export default reducers

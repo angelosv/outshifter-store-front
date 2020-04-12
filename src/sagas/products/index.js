@@ -8,12 +8,13 @@ import { api } from '../../api/api'
 
 function* findAll(){
 try{
-  const response = yield rest.get()
+  const response = yield rest.getOutshifter()
   const products = (response.data);
   yield put(productsMediatorSuccess(products)
   )
 }
 catch(error){
+  console.log(error)
   yield put(productsMediatorError({ error}))
 }
 }

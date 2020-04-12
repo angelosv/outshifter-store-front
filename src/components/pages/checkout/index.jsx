@@ -4,13 +4,15 @@ import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import SimpleReactValidator from "simple-react-validator";
 import { getCartTotal } from "../../../utils/";
+import {placeAnOrder} from '../../../actions/index'
+
 
 class checkOut extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      payment: "stripe",
+      payment: "mangopay",
       first_name: "",
       last_name: "",
       phone: "",
@@ -47,36 +49,64 @@ class checkOut extends Component {
     });
   }
 
-  StripeClick = () => {
-    if (this.validator.allValid()) {
-      alert("You submitted the form and stuff!");
-
-      var handler = window.StripeCheckout.configure({
-        key: "pk_test_glxk17KhP7poKIawsaSgKtsL",
-        locale: "auto",
-        token: (token: any) => {
-          console.log(token);
-          this.props.history.push({
-            pathname: "/order-success",
-            state: {
-              payment: token,
-              items: this.props.cartItems,
-              orderTotal: this.props.total,
-              symbol: this.props.symbol
-            }
-          });
-        }
-      });
-      handler.open({
-        name: "Multikart",
-        description: "Online Fashion Store",
-        amount: this.amount * 100
-      });
-    } else {
-      this.validator.showMessages();
-      // rerender to show messages for the first time
-      this.forceUpdate();
+  PlaceOrder = () => {
+    let order = {
+      items: this.props.cartItems,
+      customer: {
+        "id": 207119551,
+        "email": "bob.norman@hostmail.com",
+        "accepts_marketing": false,
+        "created_at": "2012-03-13T16:09:55-04:00",
+        "updated_at": "2012-03-13T16:09:55-04:00",
+        "first_name": "Bob",
+        "last_name": "Norman",
+        "orders_count": "1",
+        "state": "disabled",
+        "total_spent": "0.00",
+        "last_order_id": 450789469,
+        "note": null,
+        "verified_email": true,
+        "multipass_identifier": null,
+        "tax_exempt": false,
+        "tax_exemptions": {},
+        "phone": "+13125551212",
+        "tags": "loyal",
+      },
+      billing_address: {
+        "address1": "2259 Park Ct",
+        "address2": "Apartment 5",
+        "city": "Drayton Valley",
+        "company": null,
+        "country": "Canada",
+        "first_name": "Christopher",
+        "last_name": "Gorski",
+        "phone": "(555)555-5555",
+        "province": "Alberta",
+        "zip": "T0E 0M0",
+        "name": "Christopher Gorski",
+        "province_code": "AB",
+        "country_code": "CA",
+      },
+      shipping:{
+        "address1": "2259 Park Ct",
+        "address2": "Apartment 5",
+        "city": "Drayton Valley",
+        "company": null,
+        "country": "Canada",
+        "first_name": "Christopher",
+        "last_name": "Gorski",
+        "phone": "(555)555-5555",
+        "province": "Alberta",
+        "zip": "T0E 0M0",
+        "name": "Christopher Gorski",
+        "province_code": "AB",
+        "country_code": "CA",
+      }
     }
+
+
+
+this.props.placeAnOrder(order )
   };
 
   render() {
@@ -94,7 +124,7 @@ class checkOut extends Component {
       <div>
         {/*SEO Support*/}
         <Helmet>
-          <title>MultiKart | CheckOut Page</title>
+          <title>Outshifter | Checkout</title>
           <meta
             name="description"
             content="Multikart – Multipurpose eCommerce React Template is a multi-use React template. It is designed to go well with multi-purpose websites. Multikart Bootstrap 4 Template will help you run multiple businesses."
@@ -341,7 +371,7 @@ class checkOut extends Component {
                                       name="payment-group"
                                       id="payment-2"
                                       defaultChecked={true}
-                                      onClick={() => this.checkhandle("stripe")}
+                                      onClick={() => this.checkhandle("mangopay")}
                                     />
                                     <label htmlFor="payment-2">Stripe</label>
                                   </div>
@@ -352,7 +382,7 @@ class checkOut extends Component {
                                       type="radio"
                                       name="payment-group"
                                       id="payment-1"
-                                      onClick={() => this.checkhandle("paypal")}
+                                      onClick={() => this.checkhandle("mangopay")}
                                     />
                                     <label htmlFor="payment-1">
                                       PayPal
@@ -368,6 +398,23 @@ class checkOut extends Component {
                               </ul>
                             </div>
                           </div>
+                          {total !== 0 ? (
+                            <div className="text-right">
+                              {this.state.payment === "mangopay" ? (
+                                <button
+                                  type="button"
+                                  className="btn-solid btn"
+                                  onClick={() => this.PlaceOrder()}
+                                >
+                                  Place Order
+                                </button>
+                              ) : (
+                                <p></p>
+                              )}
+                            </div>
+                          ) : (
+                            ""
+                          )}
                         </div>
                       </div>
                     </div>
@@ -425,14 +472,7 @@ class checkOut extends Component {
                 </form>
               </div>
             </div>
-            <div className="row cart-buttons">
-                            <div className="col-6">
-                                <Link to={`${process.env.PUBLIC_URL}/left-sidebar/collection`} className="btn btn-solid">continue shopping</Link>
-                            </div>
-                            <div className="col-6">
-                                <Link to={`${process.env.PUBLIC_URL}/checkout`} className="btn btn-solid">check out</Link>
-                            </div>
-                        </div>
+
           </div>
         </section>
       </div>
@@ -442,10 +482,17 @@ class checkOut extends Component {
 const mapStateToProps = state => {
   var valuta;
   return {
+
     cartItems: state.cartList.cart,
     total: getCartTotal(state.cartList.cart),
     valuta: (valuta = { symbol: "$" })
   };
 };
 
-export default connect(mapStateToProps)(checkOut);
+const dispatchToProps = dispatch => {
+  return {
+    placeAnOrder: order => dispatch(placeAnOrder(order))
+  }
+}
+
+export default connect(mapStateToProps, dispatchToProps)(checkOut);

@@ -10,12 +10,11 @@ const { scaleDown } = transitions;
 class Main extends Component {
   render() {
     const { isLoading, dafaultvalues, products } = this.props;
-    console.log("aaaaa", products.length);
     const { productImage } = dafaultvalues;
-    if (isLoading === true) {
+    if (isLoading) {
       return <p>Loading</p>;
     } else {
-    }
+    
 
     return (
       <div>
@@ -112,6 +111,7 @@ class Main extends Component {
         </section>
       </div>
     );
+  }
   }
 }
 

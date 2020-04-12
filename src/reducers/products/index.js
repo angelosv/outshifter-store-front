@@ -7,7 +7,7 @@ import {
 const INIT_STATE = {
   products: null,
   error: false,
-  isLoading: false,
+  isLoading: true,
 };
 
 export default (state = INIT_STATE, action) => {
@@ -18,7 +18,7 @@ export default (state = INIT_STATE, action) => {
       return { ...state, isLoading: false, products: action.products };
     case PRODUCTS_MEDIATOR_FETCH_ERROR:
       return {
-        ...state, isLoading: false, error: true, errorMessage: action.payload,
+        ...state, isLoading: false, error: true, errorMessage: action.payload, products: []
       };
     default:
       return { ...state };
