@@ -4,9 +4,9 @@ import {
     PLACE_AN_ORDER_ERROR
 } from '../../constants/ActionTypes'
 
-export const placeAnOrder = (carList) =>({
+export const placeAnOrder = (order) =>({
     type:PLACE_AN_ORDER,
-    carList
+order
 })
 
 export const placeAnOrderSucces = (response) =>({

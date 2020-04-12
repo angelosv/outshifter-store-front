@@ -50,9 +50,63 @@ class checkOut extends Component {
   }
 
   PlaceOrder = () => {
-    let order = this.props.cartItems;
-    console.log(this.props,'estoy en placeorder')
-this.props.placeAnOrder(order)
+    let order = {
+      items: this.props.cartItems,
+      customer: {
+        "id": 207119551,
+        "email": "bob.norman@hostmail.com",
+        "accepts_marketing": false,
+        "created_at": "2012-03-13T16:09:55-04:00",
+        "updated_at": "2012-03-13T16:09:55-04:00",
+        "first_name": "Bob",
+        "last_name": "Norman",
+        "orders_count": "1",
+        "state": "disabled",
+        "total_spent": "0.00",
+        "last_order_id": 450789469,
+        "note": null,
+        "verified_email": true,
+        "multipass_identifier": null,
+        "tax_exempt": false,
+        "tax_exemptions": {},
+        "phone": "+13125551212",
+        "tags": "loyal",
+      },
+      billing_address: {
+        "address1": "2259 Park Ct",
+        "address2": "Apartment 5",
+        "city": "Drayton Valley",
+        "company": null,
+        "country": "Canada",
+        "first_name": "Christopher",
+        "last_name": "Gorski",
+        "phone": "(555)555-5555",
+        "province": "Alberta",
+        "zip": "T0E 0M0",
+        "name": "Christopher Gorski",
+        "province_code": "AB",
+        "country_code": "CA",
+      },
+      shipping:{
+        "address1": "2259 Park Ct",
+        "address2": "Apartment 5",
+        "city": "Drayton Valley",
+        "company": null,
+        "country": "Canada",
+        "first_name": "Christopher",
+        "last_name": "Gorski",
+        "phone": "(555)555-5555",
+        "province": "Alberta",
+        "zip": "T0E 0M0",
+        "name": "Christopher Gorski",
+        "province_code": "AB",
+        "country_code": "CA",
+      }
+    }
+
+
+
+this.props.placeAnOrder(order )
   };
 
   render() {
@@ -428,6 +482,7 @@ this.props.placeAnOrder(order)
 const mapStateToProps = state => {
   var valuta;
   return {
+
     cartItems: state.cartList.cart,
     total: getCartTotal(state.cartList.cart),
     valuta: (valuta = { symbol: "$" })

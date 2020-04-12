@@ -6,15 +6,15 @@ PLACE_AN_ORDER_ERROR
 
 
 const INIT_STATE = {
-    order: null,
-  };
+
+};
   
 
 export default  (state = INIT_STATE, action) => {
-console.log('im in the reducer?', action, action.cartList)
     switch(action.type){
         case PLACE_AN_ORDER:
-            return {...state, orderItems: action.cartList, isLoading: true}
+            return {...state,
+             isLoading: true}
         case PLACE_AN_ORDER_SUCCES:
             return {...state, isLoading: false, }
         case PLACE_AN_ORDER_ERROR:
