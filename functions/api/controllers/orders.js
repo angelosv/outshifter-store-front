@@ -1,5 +1,5 @@
 const firebase = require('../../config/firebase');
-
+const logger = require('../../config/logger');
 
 
 async function orderController(req, res){
@@ -15,7 +15,7 @@ async function orderController(req, res){
       order_shipping: shipping
     });
     res.status(201).send(orderSaved)
-        console.log(orderSaved)
+        logger.debug(orderSaved)
     } catch (error) {
         console.error(error)
         res.status(500).send(error)
