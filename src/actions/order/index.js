@@ -14,7 +14,7 @@ export const placeAnOrderSucces = (response) =>({
     response
 })
 
-export const placeAnOrderError = (message) => ({
+export const placeAnOrderError = (response) => ({
     type:PLACE_AN_ORDER_ERROR,
-    message
+    response
 })

@@ -1,0 +1,47 @@
+[debug] [2020-04-18T19:43:43.130Z] ----------------------------------------------------------------------
+[debug] [2020-04-18T19:43:43.132Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2020-04-18T19:43:43.132Z] CLI Version:   8.0.2
+[debug] [2020-04-18T19:43:43.132Z] Platform:      darwin
+[debug] [2020-04-18T19:43:43.132Z] Node Version:  v12.14.0
+[debug] [2020-04-18T19:43:43.133Z] Time:          Sat Apr 18 2020 21:43:43 GMT+0200 (Central European Summer Time)
+[debug] [2020-04-18T19:43:43.133Z] ----------------------------------------------------------------------
+[debug] [2020-04-18T19:43:43.133Z] 
+[debug] [2020-04-18T19:43:43.141Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-18T19:43:43.141Z] > authorizing via signed-in user
+[debug] [2020-04-18T19:43:43.141Z] [iam] checking project outshifter-storefront for permissions ["firebase.projects.get"]
+[debug] [2020-04-18T19:43:43.144Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/outshifter-storefront:testIamPermissions  
+ {"permissions":["firebase.projects.get"]}
+[debug] [2020-04-18T19:43:44.523Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 18 Apr 2020 19:43:44 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=863","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-04-18T19:43:44.524Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/outshifter-storefront  
+ 
+[debug] [2020-04-18T19:43:44.801Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 18 Apr 2020 19:43:44 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Serving from '/Users/angelosepulveda/Desktop/outshifter-store-front/outshifter-store-front'...
+[info] 
+[debug] [2020-04-18T19:43:44.805Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/outshifter-storefront/webApps/-/config  
+ 
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "12"
+[info] ✔  functions: functions emulator started at http://localhost:5001
+[debug] [2020-04-18T19:43:45.545Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sat, 18 Apr 2020 19:43:45 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"quic=\":443\"; ma=2592000; v=\"46,43\",h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  functions: Watching "/Users/angelosepulveda/Desktop/outshifter-store-front/outshifter-store-front/functions" for Cloud Functions...
+[debug] [2020-04-18T19:43:45.578Z] [worker-pool] addWorker(~diagnostic~) 
+[debug] [2020-04-18T19:43:45.578Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 
+[debug] [2020-04-18T19:43:45.578Z] [worker-pool] submitWork(triggerId=) 
+[debug] [2020-04-18T19:43:45.579Z] [worker-~diagnostic~-d12120c1-f588-4974-97e4-c941d15d1a5e]: Assigning socketPath: /var/folders/tr/n_vgls791ql825jwd6276q880000gn/T/fire_emu_40188.sock 
+[debug] [2020-04-18T19:43:45.579Z] [worker-~diagnostic~-d12120c1-f588-4974-97e4-c941d15d1a5e]: BUSY 
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2020-04-18T19:43:45.777Z] [runtime-status] [40188] Functions runtime initialized. {"cwd":"/Users/angelosepulveda/Desktop/outshifter-store-front/outshifter-store-front/functions","node_version":"12.14.0"} 
+[debug] [2020-04-18T19:43:45.777Z] [runtime-status] [40188] Disabled runtime features: undefined 
+[debug] [2020-04-18T19:43:45.779Z] [runtime-status] [40188] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.10.0","resolution":"/Users/angelosepulveda/Desktop/outshifter-store-front/outshifter-store-front/functions/node_modules/firebase-admin/lib/index.js"} 
+[debug] [2020-04-18T19:43:45.780Z] [runtime-status] [40188] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.0","resolution":"/Users/angelosepulveda/Desktop/outshifter-store-front/outshifter-store-front/functions/node_modules/firebase-functions/lib/index.js"} 
+[debug] [2020-04-18T19:43:45.781Z] [runtime-status] [40188] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] 
+[debug] [2020-04-18T19:43:45.847Z] [runtime-status] [40188] Checked functions.config() {"config":{}} 
+[debug] [2020-04-18T19:43:45.847Z] [runtime-status] [40188] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.0","resolution":"/Users/angelosepulveda/Desktop/outshifter-store-front/outshifter-store-front/functions/node_modules/firebase-functions/lib/index.js"} 
+[debug] [2020-04-18T19:43:45.848Z] [runtime-status] [40188] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.10.0","resolution":"/Users/angelosepulveda/Desktop/outshifter-store-front/outshifter-store-front/functions/node_modules/firebase-admin/lib/index.js"} 
+[debug] [2020-04-18T19:43:45.849Z] [runtime-status] [40188] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.6.0","resolution":"/Users/angelosepulveda/Desktop/outshifter-store-front/outshifter-store-front/functions/node_modules/firebase-functions/lib/index.js"} 
+[debug] [2020-04-18T19:43:45.849Z] [runtime-status] [40188] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.10.0","resolution":"/Users/angelosepulveda/Desktop/outshifter-store-front/outshifter-store-front/functions/node_modules/firebase-admin/lib/index.js"}} 
+[debug] [2020-04-18T19:43:46.100Z] [runtime-status] [40188] initializeApp(DEFAULT) {"databaseURL":"https://outshifter-storefront.firebaseio.com","storageBucket":"outshifter-storefront.appspot.com","projectId":"outshifter-storefront","credential":{"implicit":false,"projectId":"outshifter-storefront","privateKey":"-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDCHHkkqE52/RVc\nqyPWingnLWRSSoOuDmhqgSX/lhQZMAN2qkGN1SiRaw8EQcvjlMKEHoRqF/DR+rCh\nUC3Ta3ImC/ZUF4sVZ6CFghxYg0pPzuYGFod8+vwcxrYkBRt4VWkSeDQ06LFnu2l0\nEr0nItRTtX08WtAehmntVKBPWEn+UkuBOnPGl8SaYcREewcS4H4psNncJNbSQJAn\negZncB+J01cCGs+yTvpROoTHvkWc+NsWAYK/nfp8eUyyw78YIY26mHgIoLurLRti\nE8UoraMSUPMVG4aXJXdAKTdPzvoN7Zn4BXWT4V/MnW4b1uSLgqiBpXacxoxs00gR\nCw5mPHW5AgMBAAECggEAJGnvfuU07QTuqjbvrupEfoL5KCfS2obY5yvpmzAF/rCf\nYbYwPIFxjhARndiS/VM1h0/rQrTRiC6ZTnWqVxg3rnP9hopxHLeXKRx+oUsl2GFl\njNxSl+tEesh7ODgeDl2la6HRl2BUkXNapbvzMIGL59Uq1HTryGIqQmum9COJo/Ps\nBPxyzvQ57W9Io6PpHfxPMOIqDYcjNNrPrFI1vxSI8vBtmJzDCbTYiRxQpHdyEi5c\n+vAudXvzIteu93kTuJJ/mnAxPMV4bwy8hcpnNN2P9DvYLpfGtLA7wXU2akjL99He\nJcDEwp7TByHV8IC3GfeYIPDDnn6WdVSXrpUZKOEJxQKBgQDnURjo6/ZIYnu51o9g\nVCQmS76SsPmKlX+lEPNxO2rDTIxuJtc88XMDEMoXqHS06yeXuoPUjvjrRPYpsaU1\nJW0+9mTLvDJWx6uyZWxc89a23S1cTNBi8VFYsOLNEabV8y9IfcMV/xPz7pdivbUU\nRMUfPEeRGvaYWYIuEu40+Z0/1QKBgQDW0wcrYj+kQdOfGaJcP6fy6hAjnsXlhitD\nwkYtMq2o1huqTIbqhER5r7ASJvbDRo4/ORahfWo3kghQA8H2TSIHiyWGiYqpcniN\nwQ461VCX/oZxBuCL7xrm+X4WVm6EQu9LRmw8ue7NZY51OTXLyQTczk34mJ027ww4\nOpN7WlM0VQKBgAMosV1k840TgzsLehPHsmKvgB/CuPWyiva3H4v5UsDuB7DtaN0V\nMwvkq83c6BMcbwL8chZyCWY1H+N74JS0OSS1+rRpkopq2aZrCirOzazbomXzSpk/\nUGwUplREnHGpi4jC5uoi/KPFK14W1yU6tzJxAU0zABEej8+PRJ+GlSYtAoGBAL7W\nKrlMhzK403CzyfrfBaiSa5HpGu4h+U8xRzwhmAmzYlIvt26f32CmROhrOq0QgY8C\nfOsqyW/iR4YlQGo37TH8V3Kjvs12hkePJ7/1/al4jx/bNyC4YRKssmjPkU/nUkJx\npfdwSQan4BycnQCSa8JndvaPRKInS5ir2JYtEFsdAoGABaZ1Pcp4JJ54xGsDqgsu\nG4umcyEIhc8Ugk3raTHrRq9Q73AiavA/Woqtp1KYTamYGaMnr9aDjzlHZX+nDj0t\n9E9fsLaGJ+LcM/eHWh2S7opCNxA4ANYG3HO7WTKfm+QYdGlUOfi+Kl/RHo5lkCg+\n8rewc5w/RQiZj51GxHTLiHk=\n-----END PRIVATE KEY-----\n","clientEmail":"firebase-adminsdk-b2tq5@outshifter-storefront.iam.gserviceaccount.com","httpClient":{"retry":{"maxRetries":4,"statusCodes":[503],"ioErrorCodes":["ECONNRESET","ETIMEDOUT"],"backOffFactor":0.5,"maxDelayInMillis":60000}}}} 
+[warn] ⚠  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production.
+[info] ✔  functions[api]: http function initialized (http://localhost:5001/outshifter-storefront/us-central1/api).
+[debug] [2020-04-18T19:43:46.622Z] [worker-~diagnostic~-d12120c1-f588-4974-97e4-c941d15d1a5e]: IDLE 
