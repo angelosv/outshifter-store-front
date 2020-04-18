@@ -1,4 +1,5 @@
-import { createLogger, format, transports } from 'winston';
+const { createLogger, format, transports } = require('winston');
+const { combine, timestamp, label, printf } = format;
 
 const logger = createLogger({
   level: 'debug',
@@ -10,7 +11,13 @@ const logger = createLogger({
       ({ timestamp: datetime, level, message }) => `${datetime} [${level.toUpperCase()}]: ${message}`,
     ),
   ),
-  transports: [new transports.Console()],
+  transports: [
+    new transports.Console(),
+    new transports.File({ filename: 'combined.log' })
+  ]
 });
 
-export default logger;
+
+
+
+module.exports = logger;

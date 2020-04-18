@@ -7,6 +7,8 @@ import Cart from './components/pages/cart'
 import Layout from './components/layout/'
 import Main from './components/pages/main'
 import ProductPage from './components/product'
+import Login from './components/pages/login/'
+import Register from './components/pages/register'
 
 import { StyledGlobal } from './components/theme'
 import store from './store';
@@ -37,6 +39,8 @@ class App extends Component{
                             <Route path={`${process.env.PUBLIC_URL}/cart`} component={Cart}/>
                             <Route path={`${process.env.PUBLIC_URL}/checkout`} component={checkout}/>
                             <Route path={`${process.env.PUBLIC_URL}/succes`} component={Succes}/>
+<Route path={`${process.env.PUBLIC_URL}/login`} component={Login}/>
+<Route path={`${process.env.PUBLIC_URL}/register`} component={Register}/>
 
                         </Layout>
                     </Switch>

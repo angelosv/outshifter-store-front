@@ -1,5 +1,4 @@
 const orderController = require('../controllers/orders');
-const testing = require('../controllers/orders')
 
 const express = require("express");
 
