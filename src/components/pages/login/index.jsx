@@ -3,13 +3,19 @@ import React, {Component} from 'react';
 import LoginForm from './login'
 import RegisterForm from './register'
 
-class Login extends Component {
 
+
+
+class Login extends Component {
     constructor (props) {
         super (props)
-
     }
 
+
+ 
+
+
+   
     render (){
 
 
@@ -19,7 +25,7 @@ class Login extends Component {
                 <section className="login-page section-b-space">
                     <div className="container">
                         <div className="row">
-                        <LoginForm/>
+                        <LoginForm onSubmit={''}/>
 <RegisterForm/>
                         
                         </div>
