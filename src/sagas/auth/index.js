@@ -21,8 +21,16 @@ export default function* startRegister(){
 
 }
 
+
+export default function* startLogin(){
+    console.log('hola desde startLogin')
+}
+
+
+
 export default function* rootSaga(){
     yield all([
-        takeEvery(FIREBASE_LOGIN,startRegister)
+        takeEvery(FIREBASE_LOGIN,startRegister),
+        takeEvery(FIREBASE_LOGIN, startLogin)
     ])
 }

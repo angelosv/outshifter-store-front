@@ -27,3 +27,8 @@ export const firebaseLoginError = (message) => ({
     type: FIREBASE_LOGIN_ERROR,
     payload: message
 })
+
+export const firestoneLogin = (payload) => ({
+    type: FIREBASE_LOGIN,
+    payload
+})

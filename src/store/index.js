@@ -50,7 +50,7 @@ const store = createStore(
 
     //For working redux dev tools in chrome (https://github.com/zalmoxisus/redux-devtools-extension)
     window.__REDUX_DEVTOOLS_EXTENSION__
-      ? window.__REDUX_DEVTOOLS_EXTENSION__()
+      ? window.__REDUX_DEVTOOLS_EXTENSION__({trace: true, traceLimit: 25})
       : function(f) {
           return f;
         }

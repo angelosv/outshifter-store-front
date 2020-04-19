@@ -12,6 +12,9 @@ import {
     DropdownMenu,
     DropdownItem
 } from 'reactstrap';
+import { Avatar } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
+
 import { connect } from "react-redux";
 import LogoImage from "../../common/Logo";
 import {HeaderWrapper} from './style'
@@ -101,7 +104,12 @@ export class Header extends Component {
 														<div><img src={`${process.env.PUBLIC_URL}/assets/images/icon/search.png`} onClick={this.openSearch} className="img-fluid" alt="" />
 															<i className="fa fa-search" onClick={this.openSearch}></i></div>
 													</li>
+                                                    
 													<Cart/>
+                                                    <li>
+                                                    <Avatar size="large" icon={<UserOutlined />} />
+
+                                                    </li>
 													{/*Header Cart Component */}
 												</ul>
 											</div>
