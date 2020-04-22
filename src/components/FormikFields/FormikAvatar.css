@@ -1,0 +1,11 @@
+.formik-avatar .ant-avatar {
+  color: #f56a00;
+  background-color: #fde3cf;
+  width: 100px;
+  height: 100px;
+}
+
+.formik-avatar .ant-avatar-string {
+  transform: scale(3) translateX(-50%) !important;
+  top: 35%;
+}

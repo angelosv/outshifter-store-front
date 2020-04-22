@@ -1,42 +1,42 @@
 import React from 'react';
 import Button from 'antd'
+import { Form, Formik } from 'formik';
+import { Input } from 'antd';
+import { FormikField } from '../../FormikFields';
 
 
 
-const LoginForm = (onSubmit) => {
-const handleSumbit = ({email}) =>{
-console.log('handle submit',email)
-}
-    
-    return(
-<>
-    <div className="col-lg-6">
-                                <h3>Login</h3>
-                                <div className="theme-card">
-                                    <form className="theme-form" onSubmit={handleSumbit}>
-                                        <div className="form-group">
-                                            <label htmlFor="email">Email</label>
-                                            <input type="text" className="form-control" id="email" placeholder="Email" name="email"
-                                                   required="" />
-                                                   <Input
-                name="name"
-                placeholder="Name"
-                value={formik.values.name}
-                onChange={formik.handleChange}
-                onFocus={handleInputFocus}
-                className={classnames(errors.name && classes.error)}
-              />
-                                        </div>
-                                        <div className="form-group">
-                                            <label htmlFor="review">Password</label>
-                                            <input type="password" className="form-control" id="review"
-                                                   placeholder="Enter your password" required="" />
-                                        </div>
-                                        <button type="submit"></button>
-                                    </form>
-                                </div>
-                            </div>
+const handleSubmit = () => {}
+const LoginForm = (handleSubmit) => {
+
+  return (
+    <>
+      <div className="col-lg-6">
+        <h3>Login</h3>
+        <div className="theme-card">
+
+        </div>
+        <div className="theme-card">
+          <Formik
+            initialValues={'model'}
+            onSubmit={''}
+            validationSchema={''}
+          >
+            <Form>
+              <div className="form-group">
+                <FormikField
+                  //label="user.register-address"
+                  labelStyle={{ fontWeight: 500, color: 'black' }}
+                  name="address"
+                  placeholder="Address *"
+                />
+              </div>
+            </Form>
+          </Formik>
+        </div>
+      </div>
     </>
-)}
+  )
+}
 
 export default LoginForm

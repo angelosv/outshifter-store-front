@@ -57,6 +57,7 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
     "react-infinite-scroll-component": "^4.5.3",
+    "react-intl": "^4.5.0",
     "react-loading": "^2.0.3",
     "react-redux": "^7.1.1",
     "react-redux-multilingual": "^2.0.2",
