@@ -168,3 +168,43 @@
 [info] i  functions: Finished "api" in ~6s
 [debug] [2020-04-26T10:25:11.464Z] [worker-api-caeec075-efe0-4eb7-ac28-3bf01c9e087d]: IDLE 
 [debug] [2020-04-26T10:25:11.464Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-04-26T10:26:57.579Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-04-26T10:26:57.580Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-04-26T10:26:57.580Z] Accepted request OPTIONS /outshifter-storefront/us-central1/api/orders/new --> api
+[debug] [2020-04-26T10:26:57.580Z] [worker-pool] submitWork(triggerId=api) 
+[debug] [2020-04-26T10:26:57.580Z] [worker-api-403013ae-63af-4d3e-8814-c306f1480e9c]: Assigning socketPath: /var/folders/tr/n_vgls791ql825jwd6276q880000gn/T/fire_emu_69937.sock 
+[debug] [2020-04-26T10:26:57.580Z] [worker-api-403013ae-63af-4d3e-8814-c306f1480e9c]: BUSY 
+[debug] [2020-04-26T10:26:57.580Z] [runtime-status] [69937] Trigger "api" has been found, beginning invocation! 
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-04-26T10:26:57.581Z] [runtime-status] [69937] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"} 
+[debug] [2020-04-26T10:26:57.581Z] [runtime-status] [69937] Running api in mode HTTPS 
+[debug] [2020-04-26T10:26:57.581Z] [runtime-status] [69937] Attempting to listen to socketPath: /var/folders/tr/n_vgls791ql825jwd6276q880000gn/T/fire_emu_69937.sock 
+[debug] [2020-04-26T10:26:57.582Z] [functions] Runtime ready! Sending request! 
+[debug] [2020-04-26T10:26:57.584Z] [runtime-status] [69937] Ephemeral server handling OPTIONS request 
+[info] >  OPTIONS /outshifter-storefront/us-central1/api/orders/new 204 0.191 ms - 0 {"user":"\u001b[0mOPTIONS /outshifter-storefront/us-central1/api/orders/new \u001b[32m204\u001b[0m 0.191 ms - 0\u001b[0m"}
+[debug] [2020-04-26T10:26:57.585Z] [runtime-status] [69937] Ephemeral server survived. 
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-04-26T10:26:57.586Z] [worker-api-403013ae-63af-4d3e-8814-c306f1480e9c]: IDLE 
+[debug] [2020-04-26T10:26:57.587Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[debug] [2020-04-26T10:26:57.588Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-04-26T10:26:57.588Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-04-26T10:26:57.588Z] Accepted request POST /outshifter-storefront/us-central1/api/orders/new --> api
+[debug] [2020-04-26T10:26:57.588Z] [worker-pool] submitWork(triggerId=api) 
+[debug] [2020-04-26T10:26:57.588Z] [worker-api-403013ae-63af-4d3e-8814-c306f1480e9c]: Assigning socketPath: /var/folders/tr/n_vgls791ql825jwd6276q880000gn/T/fire_emu_69937.sock 
+[debug] [2020-04-26T10:26:57.588Z] [worker-api-403013ae-63af-4d3e-8814-c306f1480e9c]: BUSY 
+[debug] [2020-04-26T10:26:57.597Z] [runtime-status] [69937] Trigger "api" has been found, beginning invocation! 
+[info] i  functions: Beginning execution of "api"
+[debug] [2020-04-26T10:26:57.597Z] [runtime-status] [69937] triggerDefinition {"httpsTrigger":{},"name":"api","entryPoint":"api"} 
+[debug] [2020-04-26T10:26:57.597Z] [runtime-status] [69937] Running api in mode HTTPS 
+[debug] [2020-04-26T10:26:57.598Z] [runtime-status] [69937] Attempting to listen to socketPath: /var/folders/tr/n_vgls791ql825jwd6276q880000gn/T/fire_emu_69937.sock 
+[debug] [2020-04-26T10:26:57.598Z] [functions] Runtime ready! Sending request! 
+[debug] [2020-04-26T10:26:57.609Z] [runtime-status] [69937] Ephemeral server handling POST request 
+[debug] [2020-04-26T10:26:57.715Z] [runtime-status] [69937] Ephemeral server survived. 
+[warn] ⚠  Google API requested!
+   - URL: "https://www.googleapis.com/oauth2/v4/token"
+   - Be careful, this may be a production service.
+[info] >  2020-04-26T10:26:58.309Z [DEBUG]: [object Object] {"user":"2020-04-26T10:26:58.309Z [DEBUG]: [object Object]"}
+[info] >  POST /outshifter-storefront/us-central1/api/orders/new 201 699.206 ms - 63 {"user":"\u001b[0mPOST /outshifter-storefront/us-central1/api/orders/new \u001b[32m201\u001b[0m 699.206 ms - 63\u001b[0m"}
+[info] i  functions: Finished "api" in ~1s
+[debug] [2020-04-26T10:26:58.313Z] [worker-api-403013ae-63af-4d3e-8814-c306f1480e9c]: IDLE 
+[debug] [2020-04-26T10:26:58.313Z] [work-queue] {"queueLength":0,"workRunningCount":0}
