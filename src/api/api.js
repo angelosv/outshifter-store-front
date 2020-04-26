@@ -32,7 +32,7 @@ export default {
 }
 
 export const api2 = {
-    url: 'http://18.221.170.134:3000/api/users/29/products',
+    url: 'http://18.221.170.134:3000/api/users/25/products',
     reseller:{
         get: 'users/21/products'
     }

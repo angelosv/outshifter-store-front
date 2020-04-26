@@ -1,37 +1,69 @@
 import React from 'react';
-import Button from 'antd'
-import { Form } from 'antd';
 import {FormField, FormSubmit} from '../../FormAnt/index';
+import { Button } from 'reactstrap';
+import { Formik, Form } from 'formik';
+import * as Yup from 'yup';
+import { NavLink } from 'react-router-dom';
+import { firebaseLogin } from '../../../actions'
+import { connect } from 'react-redux';
 
 
-const LoginForm = () => {
-  const onFinish = values => {
-    console.log('Received values of form: ', values);
+const EmailAndPasswordSchema = Yup.object().shape({
+  email: Yup.string()
+    .email('Invalid email address')
+    .required('Email is required!'),
+  password: Yup.string()
+    .required('Password is required'),
+});
+const initialValues = {
+  email: '',
+  password: '',
+};
+
+const LoginForm = ({login}) => {
+  const onSubmit = values => {
+    console.log('Received values of form: ', values, login);
+    login(values)
   };
   return (
     <>
       <div className="col-lg-6">
         <h3>Login</h3>
-        <Form
-          name="normal_login"
-          className="login-form"
-          initialValues={{
-            remember: true,
-          }}
-          onFinish={onFinish}
-        >
-          <div className="theme-card">
-            <FormField placeholder="E-mail" name="email" />
-            <FormField placeholder="Password" name="password" password />
+        <Formik
+    initialValues={initialValues}
+    onSubmit={onSubmit}
+    validationSchema={EmailAndPasswordSchema}
+  >
+    <Form className="av-tooltip tooltip-label-right form-custom fade-in">
+      <FormField placeholder="E-mail" name="email" />
+      <FormField placeholder="Password" name="password" type="password" />
+      <div className="text-left">
+        <NavLink to="/forgot-password">
 
-            <FormSubmit placeholder="" label="Login" />
-            </div>
-
-        </Form>
+        </NavLink>
+      </div>
+      <div className="text-right">
+      <Button className="btn-outshifter-filled" type="submit">
+        Login
+        </Button>
+      </div>
+    </Form>
+  </Formik>
 
       </div>
     </>
   )
 }
 
-export default LoginForm
+
+const dispatchToProps = dispatch => {
+  return {
+      login: data => dispatch(firebaseLogin(data))
+  }
+}
+const mapStateToProps = state =>{
+  return{
+    
+  }
+}
+export default connect(mapStateToProps,dispatchToProps)(LoginForm)

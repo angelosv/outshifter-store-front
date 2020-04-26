@@ -16,21 +16,22 @@ import {
 } from '../../constants/ActionTypes'
 
 
-export default function* startRegister(){
+function* startRegister(){
     console.log('Desde saga')
 
 }
 
 
-export default function* startLogin(){
+function* startLogin({payload}){
+    console.log(payload)
     console.log('hola desde startLogin')
+    
 }
 
 
 
 export default function* rootSaga(){
     yield all([
-        takeEvery(FIREBASE_LOGIN,startRegister),
         takeEvery(FIREBASE_LOGIN, startLogin)
     ])
 }

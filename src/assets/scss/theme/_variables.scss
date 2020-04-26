@@ -1,6 +1,64 @@
 //fonts
+$separator-color-light: #f3f3f3;
+$separator-color: #d7d7d7;
+$background-color: white;
+$foreground-color : white;
+$input-background: white;
 
-$font_0: Lato;
+$dark-btn-background: #575057;
+$light-btn-background: #d4d4d4;
+
+$button-text-color: #fff;
+
+$theme-color-1: #B2B2B2;
+$theme-color-2: #4556ac;
+$theme-color-3: #af67a4;
+$theme-color-4: #743c6e;
+$theme-color-5: #4b5480;
+$theme-color-6: #795d75;
+$theme-color-7: #494349;
+
+$primary-color: #4A4A4A;
+$secondary-color: #8f8f8f;
+$muted-color: #909090;
+$outshifter-inputs-color: #D8D8D8;
+
+$gradient-color-1 : #829DDD;
+$gradient-color-2 : #85E9F7;
+$gradient-color-3 : #4BA1ED;
+
+$color-primaryBlue: #1864FF;
+$color-lightBlue: #A7C6FF;
+$color-lightGrey: #DCDCDC;
+$color-lightGreyText: #BEBDBD;
+$color-lightGreyDisabled: #EDEDED;
+$color-lightGreyDisabledText: #B1B1B1;
+$color-placeholder: #B7B7B7;
+$color-links: #1864FF;
+$color-darkGrey: #7E7E7E;
+
+$buttonShadow: rgba(50, 50, 93, 0.05) 0px 0px 0px 1px, rgba(50, 50, 93, 0.1) 0px 2px 5px 0px, rgba(0, 0, 0, 0.07) 0px 1px 1px 0px!important;
+$buttonShadowHover: rgba(50, 50, 93, 0.05) 0px 0px 0px 1px, rgba(50, 50, 93, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.07) 0px 3px 6px 0px !important;
+$boxShadow: 0 1px 15px rgba(0, 0, 0, 0.04), 0 1px 6px rgba(0, 0, 0, 0.04);
+$boxShadowHover: 0 1px 15px rgba(0, 0, 0, 0.06), 0 1px 6px rgba(0, 0, 0, 0.06);
+$boxShadowLogin: 0 1px 14px rgba(0, 0, 0, 0.12), 0 1px 6px rgba(0, 0, 0, 0.06);
+
+$border: 1px solid $separator-color;
+
+$borderRadius: 6px;
+
+$shadowOffsetsTop : 1 3 10 14 19;
+$shadowBlursTop: 1.5 5 10 14 19;
+$shadowOpacitiesTop: 0.04 0.1 0.19 0.25 0.3;
+
+$shadowOffsetsBottom : 1 3 6 10 15;
+$shadowBlursBottom: 3 6 6 5 6;
+$shadowOpacitiesBottom: 0.04 0.1 0.2 0.22 0.22;
+
+
+
+
+$font_0: Inter;
 $font_1: sans-serif;
 $font-themify: themify;
 $font-awesome: FontAwesome;

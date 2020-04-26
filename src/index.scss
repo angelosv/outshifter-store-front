@@ -29,3 +29,68 @@
   .login-form-button {
     width: 100%;
   }
+
+
+/* Button Filled */
+.btn-outshifter-filled {
+    background: $color-primaryBlue;
+    box-shadow: $buttonShadow;
+    border-radius: 30px;
+    border: none;
+    width: 90px;
+    color: white!important;
+    &:hover {
+        background: $color-primaryBlue;
+        box-shadow: $buttonShadowHover;
+    }
+    &:active {
+        background: $color-primaryBlue!important;
+        box-shadow: $buttonShadowHover;
+    }
+    &:focus {
+        background: $color-primaryBlue!important;
+    }
+    a {
+        color: white!important;
+    }
+}
+
+.form-control {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: $border-radius;
+    outline: initial !important;
+    font-size: 0.8rem;
+    padding: 0.7rem 0.9rem;
+    line-height: 1.5;
+    border: 1px solid $separator-color;
+    background: $input-background;
+    color: $primary-color;
+}
+
+.form-group input {
+    &:focus {
+        box-shadow: none;
+    }
+    &::-webkit-input-placeholder {
+        color: $color-placeholder;
+    }
+    &::-moz-placeholder {
+        color: $color-placeholder;
+    }
+    &::-ms-input-placeholder {
+        color: $color-placeholder;
+    }
+}
+
+.form-group textarea {
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.form-group label {
+    font-size: 0.8rem;
+    color: $primary-color;
+}

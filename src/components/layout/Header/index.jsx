@@ -85,7 +85,7 @@ export class Header extends Component {
                     }
 					<div className="mobile-fix-option"></div>
 
-					<div className="container">
+					<div className="container-fluid">
 						<div className="row">
 							<div className="col-sm-12">
 								<div className="main-menu">

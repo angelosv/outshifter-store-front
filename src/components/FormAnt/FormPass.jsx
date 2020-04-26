@@ -1,17 +1,6 @@
 import React from 'react';
 import { Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import * as Yup from 'yup';
-
-
-const EmailAndPasswordSchema = Yup.object().shape({
-  email: Yup.string()
-    .email('Invalid email address')
-    .required('Email is required!'),
-  password: Yup.string()
-    .required('Password is required'),
-});
-
 
 const layout = {
   labelCol: {

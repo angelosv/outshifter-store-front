@@ -1,33 +1,32 @@
-import React, {Component} from 'react';
-
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import LoginForm from './login'
 import RegisterForm from './register'
 
 
 
-
 class Login extends Component {
-    constructor (props) {
-        super (props)
+    constructor(props) {
+        super(props)
     }
 
 
- 
 
 
-   
-    render (){
 
+
+    render() {
+const {login} = this.props
 
         return (
             <div>
-                
+
                 <section className="login-page section-b-space">
                     <div className="container">
                         <div className="row">
-                        <LoginForm onSubmit={''}/>
-<RegisterForm/>
-                        
+                            <LoginForm />
+                            <RegisterForm />
+
                         </div>
                     </div>
                 </section>
@@ -37,4 +36,7 @@ class Login extends Component {
     }
 }
 
-export default Login
+
+
+
+export default connect()(Login)
