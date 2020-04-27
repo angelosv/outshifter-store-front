@@ -41,7 +41,7 @@ export default (state = INIT_STATE, action)=>{
             };
           case FIREBASE_LOGIN_ERROR:
             return {
-              ...state, loading: false, errorMessage: action.payload, error: true, user: {},
+              ...state, loading: false, errorMessage: action.payload, error: true
             };
           case FIREBASE_REGISTER_USER_SUCCESS:
             return { ...state, loading: false, errorMessage: false };
