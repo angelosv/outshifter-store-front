@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
 import LoginForm from './login'
 import RegisterForm from './register'
 
@@ -39,4 +40,4 @@ const {login} = this.props
 
 
 
-export default connect()(Login)
+export default compose(withRouter)(Login)

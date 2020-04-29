@@ -44,7 +44,7 @@ function* logout({data}){
     yield auth.signOut();
     localStorage.removeItem('authUser')
     yield put(logoutUserSucces())
-    data.history.push('/ewerew')
+    data.history.push('/')
 }
 
 

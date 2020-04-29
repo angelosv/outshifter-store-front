@@ -36,7 +36,6 @@ const LoginForm = ({ login, loading, error }) => {
 
 
   const onSubmit = values => {
-    console.log('Received values of form: ', values, login, loading);
     login(values)
   };
   return (
