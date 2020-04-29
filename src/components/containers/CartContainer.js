@@ -1,10 +1,9 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 import CartPage from '../common/CartHeader/cart-header'
 import {removeFromCart} from '../../actions/'
-import {getCartTotal} from '../../services'
 
 
 const CartContainer = ({cartList, total, symbol, removeFromCartItem}) => (
