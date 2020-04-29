@@ -1,20 +1,11 @@
 import React, { Component } from 'react'
-import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem
-} from 'reactstrap';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
+
+
 import { Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
-
+import {logoutUser} from '../../../actions/'
 import { connect } from "react-redux";
 import LogoImage from "../../common/Logo";
 import {HeaderWrapper} from './style'
@@ -55,19 +46,13 @@ export class Header extends Component {
     }
 
 
-    openNav() {
-        var openmyslide = document.getElementById("mySidenav");
-        if(openmyslide){
-            openmyslide.classList.add('open-side')
-		}
-    }
-    openSearch() {
-        document.getElementById("search-overlay").style.display = "block";
-    }
 
-    closeSearch() {
-        document.getElementById("search-overlay").style.display = "none";
-    }
+    logoutHandle = () => {
+    const {logout, history} = this.props;
+    history.push('/')
+
+    logout(history)
+}
 
 	load = ()=>{
 		this.setState({isLoading: true});
@@ -78,6 +63,7 @@ export class Header extends Component {
 	};
 	
     render() {
+        console.log(this.props,'this props')
         return (
             <div>
                 <header id="sticky" className="sticky">
@@ -108,7 +94,7 @@ export class Header extends Component {
 													<Cart/>
                                                     <li>
                                                     <Avatar size="large" icon={<UserOutlined />} />
-
+                                                    <a onClick={() => this.logoutHandle()}>Logout</a>
                                                     </li>
 													{/*Header Cart Component */}
 												</ul>
@@ -125,4 +111,16 @@ export class Header extends Component {
     }
 }
 
-export default Header
+
+const mapStateToProps = () => {
+    return{
+
+    }
+}
+
+const mapDispatchToprops = dispatch => {
+    return{
+        logout: history => dispatch(logoutUser(history))
+    }
+}
+export default compose(withRouter, connect(mapStateToProps,mapDispatchToprops))(Header)

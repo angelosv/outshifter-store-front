@@ -1,7 +1,7 @@
 import {auth} from '../../firebase';
 
 import {all, put, takeEvery, select} from  'redux-saga/effects';
-
+import poUp from '../../components/common/PopUp'
 import {
     LOGIN_USER_FETCH,
     LOGIN_USER_FETCH_SUCCESS,
@@ -17,7 +17,7 @@ import {
     FIREBASE_CHANGE_EMAIL,
     FIREBASE_REGISTER_USER_INIT,
 } from '../../constants/ActionTypes'
-import { firebaseLoginSucces, firebaseLoginError } from '../../actions';
+import { firebaseLoginSucces, firebaseLoginError, logoutUserSucces } from '../../actions';
 
 function* startRegister(){
     console.log('Desde saga')
@@ -26,6 +26,7 @@ function* startRegister(){
 
 
 function* startLogin({payload}){
+    console.log('esto es startLogin')
     const {email, password } = payload;
     try {
         const authUser = yield auth.signInWithEmailAndPassword(email, password);
@@ -39,10 +40,17 @@ function* startLogin({payload}){
     
 }
 
+function* logout({data}){
+    yield auth.signOut();
+    localStorage.removeItem('authUser')
+    yield put(logoutUserSucces())
+    data.history.push('/ewerew')
+}
 
 
 export default function* rootSaga(){
     yield all([
-        takeEvery(FIREBASE_LOGIN, startLogin)
+        takeEvery(FIREBASE_LOGIN, startLogin),
+        takeEvery(FIREBASE_LOGOUT, logout)
     ])
 }

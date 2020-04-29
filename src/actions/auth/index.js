@@ -19,8 +19,8 @@ export const firebaseRegistrerInit = ()=> ({
 })
 
 export const firebaseLoginSucces = (userId, email) => ({
-    type: FIREBASE_REGISTER_USER_SUCCESS,
-    payload: {userId, email}
+    type: FIREBASE_LOGIN_SUCCESS,
+    payload: {userId}
 })
 
 export const firebaseLoginError = (message) => ({
@@ -31,4 +31,13 @@ export const firebaseLoginError = (message) => ({
 export const firebaseLogin = (payload) => ({
     type: FIREBASE_LOGIN,
     payload
+})
+
+export const logoutUser = data => ({
+    type: FIREBASE_LOGOUT,
+    payload: data
+})
+
+export const logoutUserSucces = () => ({
+    type: FIREBASE_LOGOUT_SUCCESS,
 })
