@@ -6,9 +6,7 @@ import CartPage from '../common/CartHeader/cart-header'
 import {removeFromCart} from '../../actions/'
 import {getCartTotal} from '../../services'
 
-const Carting =({item})=>{
-return console.log('va o no?')
-}
+
 const CartContainer = ({cartList, total, symbol, removeFromCartItem}) => (
      <li  className="onhover-div mobile-cart"><div className="cart-qty-cls">{cartList.length}</div>
         <Link to={`${process.env.PUBLIC_URL}/cart`}><img src={`${process.env.PUBLIC_URL}/assets/images/icon/cart.png`} className="img-fluid" alt=""/>
