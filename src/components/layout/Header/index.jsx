@@ -60,6 +60,8 @@ export class Header extends Component {
     };
 
     render() {
+        const {authUser} = this.props
+        
         return (
             <div>
                 <header id="sticky" className="sticky">
@@ -87,7 +89,7 @@ export class Header extends Component {
                                                     </li>
 
                                                     <Cart />
-                                                    <UserMenu logout={this.logoutHandle} />
+                                                    <UserMenu logout={this.logoutHandle} authUser={authUser} />
                                                 </ul>
                                             </div>
                                         </div>
@@ -103,9 +105,9 @@ export class Header extends Component {
 }
 
 
-const mapStateToProps = () => {
+const mapStateToProps = (state) => {
     return {
-
+authUser: state.authUser
     }
 }
 

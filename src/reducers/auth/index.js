@@ -17,7 +17,7 @@ import {
 const INIT_STATE = {
     user: {},
     isRegistering: false,
-    authId:[],
+    authId:'',
     error: false
 }
 
@@ -32,11 +32,15 @@ export default (state = INIT_STATE, action)=>{
             return {...state, isRegistering:true}
         }
         case FIREBASE_LOGIN_SUCCESS:
+          console.log(action.payload,'esto es payload')
             return {
               ...state,
               loading: false,
-              authId: action.payload.userId,
-              email: action.payload.email,
+              authId: action.payload.uid,
+              user: {
+                name: '',
+                email: action.payload.email},
+
               error: false,
             };
           case FIREBASE_LOGIN_ERROR:
@@ -44,9 +48,9 @@ export default (state = INIT_STATE, action)=>{
               ...state, loading: false, errorMessage: action.payload, error: true
             };
           case FIREBASE_REGISTER_USER_SUCCESS:
-            return { ...state, loading: false, errorMessage: false };
+            return { ...state, loading: false, errorMessage: '' };
           case FIREBASE_LOGOUT_SUCCESS:
-            return { ...state, loading: false };
+            return { ...state, loading: false, authId: '', user:{}, errorMessage: ''  };
           default:
             return state;
         }

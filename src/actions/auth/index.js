@@ -18,9 +18,9 @@ export const firebaseRegistrerInit = ()=> ({
     type: FIREBASE_REGISTER_USER_INIT
 })
 
-export const firebaseLoginSucces = (userId, email) => ({
+export const firebaseLoginSucces = user => ({
     type: FIREBASE_LOGIN_SUCCESS,
-    payload: {userId}
+    payload: user
 })
 
 export const firebaseLoginError = (message) => ({

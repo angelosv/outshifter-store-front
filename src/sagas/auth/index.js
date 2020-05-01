@@ -26,13 +26,13 @@ function* startRegister(){
 
 
 function* startLogin({payload}){
-    console.log('esto es startLogin')
     const {email, password } = payload;
     try {
         const authUser = yield auth.signInWithEmailAndPassword(email, password);
-        const userId = authUser.user.uid;
-        yield put(firebaseLoginSucces(userId));
-        localStorage.setItem('authUser',userId)
+        console.log(authUser,'esto es authuser')
+        const user = authUser.user;
+        yield put(firebaseLoginSucces(user));
+        localStorage.setItem('authUser',user)
     } catch (error) {
         console.log(error.message)
         yield put(firebaseLoginError(error.message))
