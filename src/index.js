@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import PrivateRoute from './components/common/PrivateRoute'
+
 
 import Cart from './components/pages/cart'
 import Layout from './components/layout/'
@@ -9,7 +11,7 @@ import Main from './components/pages/main'
 import ProductPage from './components/product'
 import Login from './components/pages/login/'
 import Register from './components/pages/register'
-
+import Account from './components/pages/account'
 import { StyledGlobal } from './components/theme'
 import store from './store';
 import { getAllProducts } from './actions/index.js';
@@ -41,6 +43,7 @@ class App extends Component {
                                 <Route path={`${process.env.PUBLIC_URL}/succes`} component={Succes} />
                                 <Route path={`${process.env.PUBLIC_URL}/login`} component={Login} />
                                 <Route path={`${process.env.PUBLIC_URL}/register`} component={Register} />
+                                <PrivateRoute path={`${process.env.PUBLIC_URL}/account`} component={Account} />
 
                             </Layout>
                         </Switch>
