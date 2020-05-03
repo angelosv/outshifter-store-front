@@ -17,7 +17,6 @@ class Login extends Component {
 
 
     render() {
-const {login} = this.props
 
         return (
             <div>

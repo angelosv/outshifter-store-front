@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Component } from 'react';
 import { FormField, FormSubmit } from '../../FormAnt/index';
 import { Button } from 'reactstrap';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter, Redirect } from 'react-router-dom';
 import { firebaseLogin } from '../../../actions'
 import { connect } from 'react-redux';
+import { compose } from 'redux';
+
 import Loader from 'react-loader-spinner'
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import Drawer from 'react-drag-drawer'
@@ -26,21 +28,33 @@ const initialValues = {
   password: '',
 };
 
-const LoginForm = ({ login, loading, error }) => {
+class LoginForm extends Component{
+  state = {
+    redirectToReferrer: false
+  }
+
+
+render(){
+  const { login, loading, error, isAuthenticated } = this.props
+
+  const { redirectToReferrer } = this.state
+  const { from } = this.props.location.state || { from: { pathname: '/' } }
+  console.log(this.props.location.state,'thisms')
+
+  isAuthenticated ? this.setState(() => ({
+    redirectToReferrer: true
+  })):
   
-  const state = { visible: false };
-
-
-  const [errorState, setError] = useState(true);
-
-
-
-  const onSubmit = values => {
+  this.onSubmit = values => {
     login(values)
-  };
-  return (
+};
+if (redirectToReferrer === true) {
+  return <Redirect to={from} />
+}
 
-    <>
+  return(
+
+<>
       <div className="col-lg-6">
 
 
@@ -57,7 +71,7 @@ const LoginForm = ({ login, loading, error }) => {
             <h3>Login</h3>
             <Formik
               initialValues={initialValues}
-              onSubmit={onSubmit}
+              onSubmit={this.onSubmit}
               validationSchema={EmailAndPasswordSchema}
             >
               <Form className="av-tooltip tooltip-label-right form-custom fade-in">
@@ -83,6 +97,7 @@ const LoginForm = ({ login, loading, error }) => {
     </>
   )
 }
+}
 
 
 const dispatchToProps = dispatch => {
@@ -93,7 +108,9 @@ const dispatchToProps = dispatch => {
 const mapStateToProps = state => {
   return {
     loading: state.authUser.loading,
-    error: state.authUser.error
+    error: state.authUser.error,
+    isAuthenticated: state.authUser.authId
+
   }
 }
-export default connect(mapStateToProps, dispatchToProps)(LoginForm)
+export default compose(withRouter, connect(mapStateToProps, dispatchToProps))(LoginForm)
