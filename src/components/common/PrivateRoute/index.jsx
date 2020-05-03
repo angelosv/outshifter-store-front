@@ -2,19 +2,26 @@ import React, { Component } from 'react';
 import {browserRouter as Router, Route, Redirect, withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-const PrivateRoute = ({component: Component, ...rest }) => (authUser) => (
+
+
+
+const PrivateRoute = ({
+    component: Component,
+    isAuthenticated,
+     ...rest }) => (
     
     <Route {...rest} render={(props) => (
-        authUser? 
+        isAuthenticated?
         <Component {...props}/>
-    :<Redirect to={`${process.env.PUBLIC_URL}/login`}/>
+   :<Redirect to={{
+    pathname: '/login',
+  }} />
     )}>
-{ console.log(authUser,'esto es auth user')}
     </Route>
 )
 
 const mapStateToProps = state => ({
-authUser: true
+    isAuthenticated: state.authUser.authId
 });
   
 
