@@ -8,9 +8,11 @@ const app = firebase.initializeApp({
     databaseURL: "https://outshifter-storefront.firebaseio.com"
   });
   const db = firebase.firestore();
-const auth = firebase.auth()
+  const auth = firebase.auth()
+
+
   module.exports = {
-    firebase: app,
+    firebase: firebase,
     db: db,
-    auth: auth
+    auth
   }     

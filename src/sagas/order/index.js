@@ -1,9 +1,9 @@
 import { all, fork, put, takeEvery} from  'redux-saga/effects';
 import { PLACE_AN_ORDER} from '../../constants/ActionTypes';
 import {placeAnOrderError, placeAnOrderSucces} from '../../actions/index';
-import uuidv4 from 'uuid/v4'
 import axios from 'axios';
 import {auth} from '../../firebase';
+const uuidv4 = require('uuid/v4')
 
 const apiAxios = axios.create();
 

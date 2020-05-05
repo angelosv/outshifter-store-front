@@ -1,4 +1,4 @@
-const auth = require('../../config/firebase');
+const admin = require('firebase-admin')
 
 const getAuthToken = (req, res, next) => {
     if (
@@ -13,24 +13,26 @@ const getAuthToken = (req, res, next) => {
 }
 
  const checkIfAuthenticated = (req, res, next) => {
-    auth.auth().createUserWithEmailAndPassword('email@sdsd.es', 'password').catch(function(error) {
+  getAuthToken(req, res, async () => {
+    try {
+      const { authToken } = req;
+      console.log(authToken)
+      const userInfo = await admin
+        .auth()
+        .verifyIdToken(authToken);
+      console.log(userInfo)
+      req.authId = userInfo.uid;
+      return next();
+    } catch (e) {
+      return res
+        .status(401)
+        .send({ error: 'You are not authorized to make this request' });
+    }
+  });
 
-      });
-    getAuthToken(req, res, async () => {
-       try {
-         const { authToken } = req;
-   //      const userInfo = await firebase().signInWithEmailAndPassword('email@see.es', 'password')
-         
-         console.log('estoy aqui en el middleware', userInfo);
 
-         return next();
-       } catch (e) {
 
-         return res
-           .status(401)
-           .send({ error: 'You are not authorized to make this request' });
-       }
-     });
+
    };
    
    module.exports = checkIfAuthenticated;
