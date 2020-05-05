@@ -282,15 +282,6 @@ this.props.placeAnOrder(order )
                             checked={this.state.create_account}
                             onChange={this.setStateFromCheckbox}
                           />
-                          &ensp;{" "}
-                          <label htmlFor="account-option">
-                            Create An Account?
-                          </label>
-                          {this.validator.message(
-                            "checkbox",
-                            this.state.create_account,
-                            "create_account"
-                          )}
                         </div>
                       </div>
                     </div>

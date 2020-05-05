@@ -19,7 +19,7 @@ return response
 
 
 function* getOrder(data_order){
-    const token = yield auth.currentUser.getIdToken();
+    const token = yield getToken();
     console.log(token,'estoy en token')
 try{
     const config = {

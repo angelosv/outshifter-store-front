@@ -23,9 +23,8 @@ const getAuthToken = (req, res, next) => {
       console.log(userInfo)
       req.authId = userInfo.uid;
       return next();
-    } catch (e) {
-      return res
-        .status(401)
+    } catch (error) {
+        res.status(401)
         .send({ error: 'You are not authorized to make this request' });
     }
   });
@@ -35,4 +34,32 @@ const getAuthToken = (req, res, next) => {
 
    };
    
-   module.exports = checkIfAuthenticated;
+
+async function checkIfAuthenticated2(req,res, next){
+  var authToken = '';
+  if (
+    req.headers.authorization &&
+    req.headers.authorization.split(' ')[0] === 'Bearer'
+  ) {
+    authToken  = req.headers.authorization.split(' ')[1];
+  } else {
+     authToken = null;
+  }
+
+  try {
+    console.log(authToken)
+    const userInfo = await admin
+      .auth()
+      .verifyIdToken(authToken);
+    console.log(userInfo)
+    //res.status(201).send(userInfo);
+
+  } catch (error) {
+      res.status(401).send({ error: 'You are not authorized to make this request' });
+  }
+
+  next()
+
+}
+
+   module.exports = checkIfAuthenticated2;
