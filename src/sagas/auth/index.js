@@ -41,10 +41,15 @@ function* startLogin({payload}){
 }
 
 function* logout({data}){
+    try{
     yield auth.signOut();
     localStorage.removeItem('authUser')
     yield put(logoutUserSucces())
     data.history.push('/')
+} catch (error){
+
+}
+    
 }
 
 

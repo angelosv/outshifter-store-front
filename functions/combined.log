@@ -61,3 +61,86 @@
 2020-05-05T23:27:32.492Z [DEBUG]: Cannot set headers after they are sent to the client
 2020-05-05T23:29:16.279Z [DEBUG]: [object Object]
 2020-05-06T12:14:12.285Z [DEBUG]: [object Object]
+2020-05-06T13:54:12.387Z [DEBUG]: [object Object]
+2020-05-08T11:57:58.200Z [DEBUG]: [object Object]
+2020-05-08T12:00:01.204Z [DEBUG]: [object Object]
+2020-05-08T12:01:37.798Z [DEBUG]: [object Object]
+2020-05-08T12:16:40.080Z [DEBUG]: [object Object]
+2020-05-08T12:17:17.067Z [DEBUG]: [object Object]
+2020-05-08T13:12:40.217Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.authId").
+2020-05-08T13:12:43.782Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.authId").
+2020-05-08T13:13:15.905Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.authId").
+2020-05-08T13:19:09.755Z [DEBUG]: [object Object]
+2020-05-08T13:24:26.364Z [DEBUG]: [object Object]
+2020-05-08T13:26:47.428Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Input object is deeper than 20 levels or contains a cycle.
+2020-05-08T13:27:21.718Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Input object is deeper than 20 levels or contains a cycle.
+2020-05-08T13:27:50.997Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.order_customer").
+2020-05-08T13:29:31.158Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.order_customer").
+2020-05-08T13:36:25.391Z [DEBUG]: [object Object]
+2020-05-08T13:38:09.944Z [DEBUG]: [object Object]
+2020-05-08T13:38:35.764Z [DEBUG]: [object Object]
+2020-05-08T13:38:53.613Z [DEBUG]: [object Object]
+2020-05-08T13:40:39.658Z [DEBUG]: [object Object]
+2020-05-08T13:41:34.253Z [DEBUG]: [object Object]
+2020-05-08T13:41:47.769Z [DEBUG]: [object Object]
+2020-05-08T13:42:16.005Z [DEBUG]: [object Object]
+2020-05-08T13:44:35.700Z [DEBUG]: [object Object]
+2020-05-08T13:46:23.107Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.order_id").
+2020-05-08T13:47:12.701Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.order_id").
+2020-05-08T13:47:47.643Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.order_id").
+2020-05-08T13:48:15.789Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.order_id").
+2020-05-08T13:48:21.463Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.order_id").
+2020-05-08T13:48:48.408Z [DEBUG]: [object Object]
+2020-05-08T14:05:05.444Z [DEBUG]: [object Object]
+2020-05-08T14:06:56.675Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.order_id").
+2020-05-08T14:07:01.473Z [DEBUG]: [object Object]
+2020-05-08T14:07:02.636Z [DEBUG]: [object Object]
+2020-05-08T14:08:49.724Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.order_id").
+2020-05-08T14:08:57.851Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.order_id").
+2020-05-11T08:53:32.367Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.order_id").
+2020-05-11T08:56:06.269Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.order_id").
+2020-05-11T08:56:23.218Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.order_id").
+2020-05-11T08:56:25.771Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.order_id").
+2020-05-11T08:56:49.451Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.order_id").
+2020-05-11T08:56:52.276Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.order_id").
+2020-05-11T08:58:08.075Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.order_id").
+2020-05-11T09:00:23.210Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.order_id").
+2020-05-11T09:00:33.145Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.order_id").
+2020-05-11T09:04:16.000Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.order_id").
+2020-05-11T09:09:36.073Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.order_id").
+2020-05-11T09:29:11.277Z [DEBUG]: Value for argument "collectionPath" must point to a collection, but was "orders/undefined". Your path does not contain an odd number of components.
+2020-05-11T09:33:51.849Z [DEBUG]: Value for argument "collectionPath" must point to a collection, but was "orders/undefined". Your path does not contain an odd number of components.
+2020-05-11T09:45:34.155Z [DEBUG]: Value for argument "collectionPath" must point to a collection, but was "orders/undefined". Your path does not contain an odd number of components.
+2020-05-11T09:45:54.919Z [DEBUG]: Value for argument "collectionPath" must point to a collection, but was "orders/undefined". Your path does not contain an odd number of components.
+2020-05-11T09:45:58.273Z [DEBUG]: Value for argument "collectionPath" must point to a collection, but was "orders/undefined". Your path does not contain an odd number of components.
+2020-05-11T09:45:59.033Z [DEBUG]: Value for argument "collectionPath" must point to a collection, but was "orders/undefined". Your path does not contain an odd number of components.
+2020-05-11T09:46:56.334Z [DEBUG]: Value for argument "collectionPath" must point to a collection, but was "orders/undefined". Your path does not contain an odd number of components.
+2020-05-11T09:48:00.720Z [DEBUG]: Value for argument "collectionPath" must point to a collection, but was "orders/asdasdasdsada". Your path does not contain an odd number of components.
+2020-05-11T09:58:56.440Z [DEBUG]: Value for argument "documentPath" is not a valid resource path. Path must be a non-empty string.
+2020-05-11T09:59:42.410Z [DEBUG]: Value for argument "documentPath" is not a valid resource path. Path must be a non-empty string.
+2020-05-11T09:59:56.966Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_customer.order_id").
+2020-05-11T10:03:51.220Z [DEBUG]: Value for argument "documentPath" must point to a document, but was "/234234324342/90f34063-62f9-453e-9351-78a27f4ec325". Your path does not contain an even number of components.
+2020-05-11T10:04:29.064Z [DEBUG]: Value for argument "documentPath" must point to a document, but was "/234234324342/e69d89d2-00f8-4db3-9813-aca34e888218". Your path does not contain an even number of components.
+2020-05-11T10:08:41.697Z [DEBUG]: firebase.db.collection(...).doc(...).collection(...).set is not a function
+2020-05-11T10:09:22.330Z [DEBUG]: [object Object]
+2020-05-11T10:09:25.408Z [DEBUG]: [object Object]
+2020-05-11T10:10:13.072Z [DEBUG]: [object Object]
+2020-05-11T10:11:51.584Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_user").
+2020-05-11T10:12:09.581Z [DEBUG]: [object Object]
+2020-05-11T13:15:11.821Z [DEBUG]: [object Object]
+2020-05-11T13:17:09.892Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_user").
+2020-05-11T13:17:32.021Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_user").
+2020-05-11T13:17:44.220Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_user").
+2020-05-11T13:18:32.990Z [DEBUG]: [object Object]
+2020-05-11T13:19:29.806Z [DEBUG]: [object Object]
+2020-05-11T13:19:46.194Z [DEBUG]: [object Object]
+2020-05-11T13:24:32.990Z [DEBUG]: [object Object]
+2020-05-11T13:24:54.698Z [DEBUG]: [object Object]
+2020-05-11T13:25:27.745Z [DEBUG]: [object Object]
+2020-05-11T13:25:49.715Z [DEBUG]: [object Object]
+2020-05-11T13:43:36.806Z [DEBUG]: [object Object]
+2020-05-11T13:44:24.240Z [DEBUG]: Value for argument "data" is not a valid Firestore document. Cannot use "undefined" as a Firestore value (found in field "order_user").
+2020-05-11T13:44:46.312Z [DEBUG]: [object Object]
+2020-05-11T13:45:12.561Z [DEBUG]: [object Object]
+2020-05-11T13:45:59.707Z [DEBUG]: [object Object]
+2020-05-11T13:48:41.228Z [DEBUG]: [object Object]

@@ -1,6 +1,6 @@
 const orderController = require('../controllers/orders');
 const checkIfAuthenticated2 = require('../middlewares/auth-middleware')
-
+const checkUser = require('../middlewares/create-user-middleware')
 const express = require("express");
 
 const router = express.Router();
@@ -18,7 +18,7 @@ router.get("/", checkAuth, (req, res, next) => {
 
 
 
-router.post("/new", checkIfAuthenticated2, orderController);
+router.post("/new", checkUser, orderController);
 
 
 

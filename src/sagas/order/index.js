@@ -3,7 +3,6 @@ import { PLACE_AN_ORDER} from '../../constants/ActionTypes';
 import {placeAnOrderError, placeAnOrderSucces} from '../../actions/index';
 import axios from 'axios';
 import {auth} from '../../firebase';
-const uuidv4 = require('uuid/v4')
 
 const apiAxios = axios.create();
 
@@ -19,19 +18,18 @@ return response
 
 
 function* getOrder(data_order){
-    const token = yield getToken();
+    console.log('estamos aqui')
+    const token = getToken();
     console.log(token,'estoy en token')
 try{
-    const config = {
-        headers: {authorization: `Bearer ${token}` }
-    };
+
 const bodyParameters = {
-    order_id: uuidv4(),
+
     data_order: data_order.order
 }
-    const response =  yield apiAxios.post('http://localhost:5001/outshifter-storefront/us-central1/api/orders/new', bodyParameters, config)
-console.log('response from server', response)
-yield put(placeAnOrderSucces(response))
+    const response =  yield apiAxios.post('http://localhost:5001/outshifter-storefront/us-central1/api/orders/new', bodyParameters)
+
+    yield put(placeAnOrderSucces(response))
 }catch(error){
     yield put(placeAnOrderError(error))
 }
